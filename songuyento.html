@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="songuyen" oninput="isPrime(this.value)"
+       onchange="isPrime(this.value)"
+       placeholder="Nhập số cần kiểm tra nhỏ hơn "
+>
+<p >Kết quả : <label id="result"></label></p>
+<script>
+
+    function isPrime(n) {
+        var flag = true;
+        if (n < 2){flag = false;}
+        else {
+            for (var i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;}}}
+        if (flag == true){
+            result = n + " là số nguyên tố"+" <br/>";
+        }
+        else{
+            result = n + " không phải là số nguyên tố <br/>";
+        }
+        document.getElementById('result').innerHTML=result;
+    }
+</script>
+</body>
+</html>

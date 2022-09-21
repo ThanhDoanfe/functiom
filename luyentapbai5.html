@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let star1=["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+  let star2=["Ursa Minor","Tarurus","Cygnus"," Lyra"," Aquila"," Ursa Major "," Leo"]
+  let yourStar=prompt("nhập ngôi sao của ban để tìm được ngôi sao một nủa của đời mình")
+  let starIndex = null;
+
+  function findStar(yourStar){
+    for(let i=0;i<=star1.length;i++) {
+        if (yourStar == star1[i]) {
+            starIndex = i;
+            break;
+        }
+    }
+
+    return starIndex != null ? star2[starIndex] : null;
+  }
+
+  let result = findStar(yourStar);
+  if (result != null){
+      document.write(result);
+  }else {
+      document.write("khong tim thay");
+  }
+
+</script>
+</body>
+</html>
